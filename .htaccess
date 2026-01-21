@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteCond %{REQUEST_METHOD} ^(GET|POST|PUT|DELETE|OPTIONS)$
-RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]
+RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
 
 # Si quieres redirigir todo el tráfico al puerto 3000:
 # RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P]
