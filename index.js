@@ -68,7 +68,7 @@ app.post("/api/formaciones", async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error al consultar la base de datos" });
+    res.status(500).json({ error: error });
   }
 });
 
