@@ -8,9 +8,7 @@ const port = process.env.PORT || 3000;
 
 app.use(
   cors({
-    // origin: "https://pedagogiavial.com",
-    // origin: "https://pedagogiavial.com",
-    origin: "*",
+    origin: "https://pedagogiavial.com",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -218,6 +216,6 @@ app.post("/api/informes", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
