@@ -8,11 +8,13 @@ const port = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "https://pedagogiavial.com",
+    // origin: "https://pedagogiavial.com",
+    // origin: "https://pedagogiavial.com",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
-  })
+  }),
 );
 
 app.use(express.json());
@@ -180,7 +182,7 @@ app.post("/api/informes", async (req, res) => {
       if (!acc.includes(region)) acc.push(region);
 
       const departamento = region.departamentos.find(
-        (d) => d.departamento === row.departamento
+        (d) => d.departamento === row.departamento,
       ) || {
         departamento: row.departamento,
         ciudades: [],
@@ -190,7 +192,7 @@ app.post("/api/informes", async (req, res) => {
         region.departamentos.push(departamento);
 
       const ciudad = departamento.ciudades.find(
-        (c) => c.ciudad === row.ciudad
+        (c) => c.ciudad === row.ciudad,
       ) || {
         ciudad: row.ciudad,
         cod_divipola: row.cod_divipola,
